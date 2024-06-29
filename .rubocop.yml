@@ -1,0 +1,31 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-factory_bot
+  - rubocop-capybara
+
+AllCops:
+  NewCops: enable
+Layout/LineLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Rails/I18nLocaleTexts:
+  Enabled: false
+RSpec/IndexedLet:
+  Enabled: false
+RSpec/InstanceVariable:
+  AssignmentOnly: true
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/NestedGroups:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
