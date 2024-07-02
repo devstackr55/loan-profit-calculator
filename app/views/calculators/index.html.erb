@@ -1,0 +1,40 @@
+<div class="max-w-5xl min-w-[200px] mx-auto p-6 bg-white shadow-xl rounded-lg">
+  <h2 class="text-3xl font-bold mb-6 mt-5 text-center">Loan Application Form</h2>
+  <%= form_with url: calculators_path, method: :post, class: "space-y-4" do %>
+    <div>
+      <%= text_area_tag :address, nil, placeholder: "Address", required: true, class: "mt-7 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white placeholder: text-center" %>
+    </div>
+
+    <div>
+      <%= number_field_tag :loan_term, nil, min: 1, max: 12, placeholder: "Loan term - in month (1 - 12)", required: true, class: "mt-1 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white placeholder: text-center" %>
+    </div>
+
+    <div class="grid grid-cols-3 gap-5 justify-items-center">
+      <%= label_tag :purchase_price, "Purchase Price", class: "mt-7 block text-sm font-medium text-gray-700" %>
+      <%= label_tag :repair_budget, "Repair Budget", class: "mt-7 block text-sm font-medium text-gray-700" %>
+      <%= label_tag :arv, "After Repair Value", class: "mt-7 block text-sm font-medium text-gray-700" %>
+    </div>
+
+    <div class="grid grid-cols-3 gap-5">
+      <%= number_field_tag :purchase_price, nil, placeholder: "Property purchase price in $", required: true, class: "mt-1 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white placeholder: text-center" %>
+      <%= number_field_tag :repair_budget, nil, placeholder: "Estimated repair budget in $", required: true, class: "mt-1 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white placeholder: text-center" %>
+      <%= number_field_tag :arv, nil, placeholder: "Post repair market value in $", required: true, class: "mt-1 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white placeholder: text-center" %>
+    </div>
+
+    <div class="grid grid-cols-3 gap-5 justify-items-center">
+      <%= label_tag :name, "Full Name", class: "mt-7 block text-sm font-medium text-gray-700" %>
+      <%= label_tag :email, "Email", class: "mt-7 block text-sm font-medium text-gray-700" %>
+      <%= label_tag :phone, "Phone Number", class: "mt-7 block text-sm font-medium text-gray-700" %>
+    </div>
+
+    <div class="grid grid-cols-3 gap-5">
+      <%= text_field_tag :name, nil, placeholder: "John Doe", required: true, class: "mt-1 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white placeholder: text-center" %>
+      <%= email_field_tag :email, nil, placeholder: "mail@johndoe.com", required: true, class: "mt-1 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white placeholder: text-center" %>
+      <%= telephone_field_tag :phone, nil, placeholder: "(xxx) xxx-xxxx", pattern: "\\(([2-9][0-9]{2})\\) ?[2-9][0-9]{2}-[0-9]{4}", required: true, class: "mt-1 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white placeholder: text-center" %>
+    </div>
+
+    <div>
+      <%= submit_tag "Submit", class: "mt-5 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 w-full h-12" %>
+    </div>
+  <% end %>
+</div>
